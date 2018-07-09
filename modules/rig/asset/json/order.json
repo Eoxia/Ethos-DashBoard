@@ -1,0 +1,23 @@
+[
+  "globalminer",
+  "maxgputemp",
+  "stratumproxy",
+  "globalfan",
+  "loc",
+  "proxywallet",
+  "proxypool1",
+  "proxypool2",
+  "poolpass1",
+  "poolpass2",
+  "poolemail",
+  "flags",
+  "globalcore",
+  "globalmem",
+  "globalpowertune",
+  "autoreboot",
+  "custompanel",
+  "lockscreen",
+  "globaldesktop",
+  "globalname",
+  "pool"
+]

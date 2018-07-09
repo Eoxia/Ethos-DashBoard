@@ -1,0 +1,261 @@
+{
+    "key": "group_5b4289b0cc928",
+    "title": "Wallet",
+    "fields": [
+        {
+            "key": "field_5b4286c554c74",
+            "label": "miner algorithm",
+            "name": "globalminer",
+            "type": "select",
+            "instructions": "http:\/\/ethosdistro.com\/kb\/#updating-miners",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ethminer": "ethminer",
+                "sgminer-gm": "sgminer-gm",
+                "claymore": "claymore",
+                "claymore-zcash": "claymore-zcash",
+                "optiminer-zcash": "optiminer-zcash",
+                "claymore-xmr": "claymore-xmr",
+                "sgminer-gm-xmr": "sgminer-gm-xmr",
+                "cgminer-skein": "cgminer-skein",
+                "ewbf-zcash": "ewbf-zcash",
+                "dstm-zcash": "dstm-zcash",
+                "ccminer": "ccminer"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b428a6173a0b",
+            "label": "Email for pool",
+            "name": "poolemail",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5b428a9a73a0c",
+            "label": "Wallet adress",
+            "name": "proxywallet",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b428ac673a0d",
+            "label": "Pool 1",
+            "name": "proxypool1",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b428c1573a0e",
+            "label": "Pool 2",
+            "name": "proxypool2",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b428c5173a0f",
+            "label": "Pool Password 1",
+            "name": "poolpass1",
+            "type": "password",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5b428c9673a10",
+            "label": "Pool Password2",
+            "name": "poolpass2",
+            "type": "password",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5b428f20159cc",
+            "label": "Second Coin",
+            "name": "secondcoin",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "blake2S": "blake2S",
+                "Decret": "Decret",
+                "keccak": "keccak",
+                "Lbry": "Lbry",
+                "SiaCoin": "SiaCoin",
+                "Pascal": "Pascal"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b428fdb159cd",
+            "label": "Second Coin Intensity",
+            "name": "secondcoinintensity",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": "",
+            "max": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5b4291ab9c752",
+            "label": "Stratum Proxy",
+            "name": "stratumproxy",
+            "type": "select",
+            "instructions": "http:\/\/ethosdistro.com\/kb\/#fixing-hashrate",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "enabled": "enabled",
+                "disabled": "disabled"
+            },
+            "default_value": [
+                "enabled"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b4292589c753",
+            "label": "flags",
+            "name": "flags",
+            "type": "text",
+            "instructions": "http:\/\/ethosdistro.com\/kb\/#zcash",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wallet"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": ""
+}

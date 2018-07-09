@@ -1,0 +1,12 @@
+{
+	"name": "ethos-dashboard",
+	"slug": "ethos-dashboard",
+	"modules": [
+		"core/core.config.json",
+    "modules/rig/rig.config.json",
+    "modules/rig-category/rig-category.config.json",
+    "modules/wallet/wallet.config.json"
+	],
+	"version": "0.1.0",
+  "folder_meta_key": "_ethos_dashboard_folder"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Rig",
+  "slug": "rig",
+  "version": "0.1.0",
+  "path": "modules/rig",
+  "dependencies_func": [
+    "\\ethos_dashboard\\is_acf"
+  ],
+  "dependencies": {
+    "action": {},
+    "class": {}
+  }
+}
