@@ -37,13 +37,13 @@ class Rig_Action {
 	public function callback_init() {
 
 		$labels = array(
-			'name'          => _x( 'Rigs', 'Post Type General Name', 'wp-ethos-dashboard' ),
-			'singular_name' => _x( 'Rig', 'Post Type Singular Name', 'wp-ethos-dashboard' ),
-			'menu_name'     => __( 'Rigs', 'wp-ethos-dashboard' ),
+			'name'          => _x( 'Rigs', 'Post Type General Name', 'ethos-dashboard' ),
+			'singular_name' => _x( 'Rig', 'Post Type Singular Name', 'ethos-dashboard' ),
+			'menu_name'     => __( 'Rigs', 'ethos-dashboard' ),
 		);
 
 		$args = array(
-			'label'               => __( 'Rig', 'wp-ethos-dashboard' ),
+			'label'               => __( 'Rig', 'ethos-dashboard' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'revisions' ),
 			'taxonomies'          => array( Rig_Category_Class::g()->taxonomy ),

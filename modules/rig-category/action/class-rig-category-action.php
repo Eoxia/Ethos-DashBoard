@@ -34,9 +34,9 @@ class Rig_Category_Action {
 	 */
 	public function callback_init() {
 		$labels = array(
-			'name'          => _x( 'RIG taxonomies', 'Taxonomy General Name', 'wp-ethos-dashboard' ),
-			'singular_name' => _x( 'RIG taxonomy', 'Taxonomy Singular Name', 'wp-ethos-dashboard' ),
-			'menu_name'     => __( 'RIG taxonomy', 'wp-ethos-dashboard' ),
+			'name'          => _x( 'RIG taxonomies', 'Taxonomy General Name', 'ethos-dashboard' ),
+			'singular_name' => _x( 'RIG taxonomy', 'Taxonomy Singular Name', 'ethos-dashboard' ),
+			'menu_name'     => __( 'RIG taxonomy', 'ethos-dashboard' ),
 		);
 
 		$args = array(

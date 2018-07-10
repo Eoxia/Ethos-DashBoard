@@ -35,13 +35,13 @@ class Wallet_Action {
 	public function callback_init() {
 
 		$labels = array(
-			'name'          => _x( 'Wallets', 'Post Type General Name', 'wp-ethos-dashboard' ),
-			'singular_name' => _x( 'Wallet', 'Post Type Singular Name', 'wp-ethos-dashboard' ),
-			'menu_name'     => __( 'Wallets', 'wp-ethos-dashboard' ),
+			'name'          => _x( 'Wallets', 'Post Type General Name', 'ethos-dashboard' ),
+			'singular_name' => _x( 'Wallet', 'Post Type Singular Name', 'ethos-dashboard' ),
+			'menu_name'     => __( 'Wallets', 'ethos-dashboard' ),
 		);
 
 		$args = array(
-			'label'               => __( 'Wallet', 'wp-ethos-dashboard' ),
+			'label'               => __( 'Wallet', 'ethos-dashboard' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'revisions' ),
 			'hierarchical'        => false,
