@@ -76,8 +76,7 @@ class Rig_Action {
 	 */
 	public function callback_save_post( $post_id, $post, $update ) {
 		if ( 'rig' === $post->post_type && $update ) {
-			$categories = wp_get_post_terms( $post->ID, Rig_Category_Class::g()->taxonomy );
-			$category   = $categories[0];
+			$category = get_term( get_field( 'rig_category', $post_id ), Rig_Category_Class::g()->taxonomy );
 
 			$category->acf = Rig_Category_Class::g()->get_fields( $category->term_id );
 			$wallet        = Wallet_Class::g()->get_fields( $category->acf['wallet_id'] );

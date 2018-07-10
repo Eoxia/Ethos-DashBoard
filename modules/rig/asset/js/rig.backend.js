@@ -10,8 +10,7 @@ window.eoxiaJS.ethosDashboard.RIG.init = function() {
 		jQuery( this ).closest( '.acf-input' ).find( 'input[type="text"]' ).removeAttr( 'disabled' );
 		window.eoxiaJS.ethosDashboard.RIG.copyToClipboard( jQuery( this ).closest( '.acf-input' ).find( 'input[type="text"]' )[0] );
 		jQuery( this ).closest( '.acf-input' ).find( 'input[type="text"]' ).attr( 'disabled', 'disabled' );
-
-	});
+	} );
 };
 
 
@@ -22,10 +21,12 @@ window.eoxiaJS.ethosDashboard.RIG.copyToClipboard = function(elem) {
 
     var origSelectionStart, origSelectionEnd;
     if (isInput) {
+        // can just use the original source element for the selection and copy
         target = elem;
         origSelectionStart = elem.selectionStart;
         origSelectionEnd = elem.selectionEnd;
     } else {
+        // must use a temporary form element for the selection and copy
         target = document.getElementById(targetId);
         if (!target) {
             var target = document.createElement("textarea");

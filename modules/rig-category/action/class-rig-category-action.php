@@ -47,6 +47,7 @@ class Rig_Category_Action {
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
+			'meta_box_cb'       => false,
 		);
 
 		register_taxonomy( Rig_Category_Class::g()->taxonomy, array( 'rig' ), $args );
