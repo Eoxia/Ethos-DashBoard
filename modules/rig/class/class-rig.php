@@ -89,7 +89,6 @@ class Rig_Class extends \eoxia\Singleton_Util {
 			$url = str_replace( str_replace( '\\', '/', $uploads['basedir'] ), $uploads['baseurl'], $full_path );
 
 			update_post_meta( $id, 'lien_txt', $url );
-			unset( $_POST['acf']['field_5b43741a3a5e5'] );
 		}
 	}
 

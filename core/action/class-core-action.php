@@ -77,6 +77,11 @@ class Core_Action {
 
 			if ( wp_mkdir_p( $full_path ) ) {
 				update_option( \eoxia\Config_Util::$init['ethos-dashboard']->folder_meta_key, $folder_name );
+
+				if ( $file = fopen( $full_path . '/.htaccess', 'w+' ) ) {
+					fputs( $file, 'Options All -Indexes' );
+					fclose( $file );
+				}
 			}
 		}
 
