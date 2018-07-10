@@ -42,3 +42,5 @@ class Rig_Filter {
 		return $field;
 	}
 }
+
+new Rig_Filter();

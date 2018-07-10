@@ -25,7 +25,8 @@ class Rig_Action {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'callback_init' ) );
-		add_action( 'save_post', array( $this, 'callback_save_post' ), 20, 2 );
+		add_action( 'save_post', array( $this, 'callback_save_post' ), 20, 3 );
+		add_action( 'acf/render_field', array( $this, 'callback_link_txt' ), 21, 1 );
 	}
 
 	/**
@@ -71,9 +72,10 @@ class Rig_Action {
 	 *
 	 * @param  integer $post_id L'ID du post.
 	 * @param  WP_Post $post    Les données du post de WordPress.
+	 * @param  boolean $update  True si c'est une mise à jour du POST.
 	 */
-	public function callback_save_post( $post_id, $post ) {
-		if ( 'rig' === $post->post_type ) {
+	public function callback_save_post( $post_id, $post, $update ) {
+		if ( 'rig' === $post->post_type && $update ) {
 			$categories = wp_get_post_terms( $post->ID, Rig_Category_Class::g()->taxonomy );
 			$category   = $categories[0];
 
@@ -84,6 +86,20 @@ class Rig_Action {
 			unset( $category->acf['wallet_id'] );
 
 			Rig_Class::g()->generate( $post_id, $rig, $wallet, $category->acf );
+		}
+	}
+
+	/**
+	 * Ajoutes un bouton permettant de copier le lien dans le presse papier.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @param  array $field Les données du champ.
+	 */
+	public function callback_link_txt( $field ) {
+		if ( 'lien_txt' === $field['_name'] ) {
+			$output = __( 'Copy to clipboard!', 'ethos-dashboard' );
+			echo '<i aria-label="' . esc_attr( $output ) . '" class="alignright wpeo-tooltip-event fas fa-copy"></i>';
 		}
 	}
 }

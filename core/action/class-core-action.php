@@ -24,11 +24,24 @@ class Core_Action {
 	 * @since 0.1.0
 	 */
 	public function __construct() {
+		add_action( 'admin_enqueue_scripts', array( $this, 'callback_admin_enqueue' ) );
 		add_action( 'tgmpa_register', array( Core_Util::g(), 'annonces_register_required_plugins' ) );
 		add_action( 'admin_notices', array( $this, 'acf_version_notice' ) );
 
 		add_action( 'init', array( $this, 'load_languages' ) );
 		add_action( 'admin_init', array( $this, 'create_folder' ) );
+
+	}
+
+	/**
+	 * Inclus les styles et scripts.
+	 *
+	 * @since 0.1.0
+	 */
+	public function callback_admin_enqueue() {
+		wp_enqueue_script( 'script-ethos-dashboard', PLUGIN_ETHOS_DASHBOARD_URL . 'core/asset/js/backend.min.js', array(), \eoxia\Config_Util::$init['ethos-dashboard']->version, false );
+		wp_register_style( 'style-ethos-dashboard', PLUGIN_ETHOS_DASHBOARD_URL . 'core/asset/css/style.min.css', array(), \eoxia\Config_Util::$init['ethos-dashboard']->version );
+		wp_enqueue_style( 'style-ethos-dashboard' );
 	}
 
 	/**
@@ -84,7 +97,6 @@ class Core_Action {
 				}
 			}
 		}
-
 	}
 }
 

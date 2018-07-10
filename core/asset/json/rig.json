@@ -1,3 +1,4 @@
+
 {
     "key": "group_5b43270fefc28",
     "title": "RIG",
@@ -16,6 +17,26 @@
                 "id": ""
             },
             "default_value": 75,
+            "min": "",
+            "max": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5b44791325cbc",
+            "label": "Global Fan in pourcentage",
+            "name": "global_fan_in_pourcentage",
+            "type": "range",
+            "instructions": "Follow the below steps to reduce the chances of your GPUs overheating:\r\n\r\nDo not set fan speed on individual GPUs, set globalfan to a higher value.\r\nRemove -tt from the claymore flags options, (using claymore fan control will break globalfan).\r\nCheck to make sure there are no broken fans or loose cables in the GPU fans.\r\nMove the GPUs around in your rig, make sure that the hottest one has ample spacing for airflow.\r\nPhysically swap the locations of the coldest and hottest GPUs in your rig, to balance temperatures.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 85,
             "min": "",
             "max": "",
             "step": "",
