@@ -1,11 +1,11 @@
 <?php
 /**
- * Action of Annonce module.
+ * Les actions des catégories de RIG.
  *
  * @author    Eoxia <dev@eoxia.com>
  * @copyright (c) 2018 Eoxia <dev@eoxia.com>
  * @license   MIT <https://spdx.org/licenses/MIT.html>
- * @package   EthosDashboard\Actions
+ * @package   Ethos_Dashboard\Actions
  * @since     0.1.0
  */
 

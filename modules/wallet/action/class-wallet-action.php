@@ -1,11 +1,11 @@
 <?php
 /**
- * Action of Wallet module.
+ * Les actions des WALLET.
  *
  * @author    Eoxia <dev@eoxia.com>
  * @copyright (c) 2018 Eoxia <dev@eoxia.com>
  * @license   MIT <https://spdx.org/licenses/MIT.html>
- * @package   EthosDashboard\Actions
+ * @package   Ethos_Dashboard\Actions
  * @since     0.1.0
  */
 
@@ -14,7 +14,7 @@ namespace ethos_dashboard;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Action of "Hello_World" module.
+ * Wallet Action class.
  */
 class Wallet_Action {
 

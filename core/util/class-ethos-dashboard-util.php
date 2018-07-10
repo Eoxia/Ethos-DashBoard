@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugins required by module
+ * Les fonctions "utils" principale du plugin.
  *
  * @author    Eoxia <dev@eoxia.com>
  * @copyright (c) 2018 Eoxia <dev@eoxia.com>
  * @license   MIT <https://spdx.org/licenses/MIT.html>
- * @package   EthosDashboard\Util
+ * @package   Ethos_Dashboard\Util
  * @since     0.1.0
  */
 

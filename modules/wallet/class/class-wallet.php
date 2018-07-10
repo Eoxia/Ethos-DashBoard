@@ -1,11 +1,11 @@
 <?php
 /**
- * Gestion des fonctions pour les catégories.
+ * Gestion des wallets.
  *
  * @author    Eoxia <dev@eoxia.com>
  * @copyright (c) 2018 Eoxia <dev@eoxia.com>
  * @license   MIT <https://spdx.org/licenses/MIT.html>
- * @package   EthosDashboard\Classes
+ * @package   Ethos_Dashboard\Classes
  * @since     0.1.0
  */
 

@@ -1,11 +1,11 @@
 <?php
 /**
- * Functions available
+ * Permet de vérifier l'existance de ACF.
  *
  * @author    Eoxia <dev@eoxia.com>
  * @copyright (c) 2018 Eoxia <dev@eoxia.com>
  * @license   MIT <https://spdx.org/licenses/MIT.html>
- * @package   EthosDashboard\Helper
+ * @package   Ethos_Dashboard\Helper
  * @since     0.1.0
  */
 

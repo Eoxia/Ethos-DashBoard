@@ -5,7 +5,7 @@
  * @author    Eoxia <dev@eoxia.com>
  * @copyright (c) 2018 Eoxia <dev@eoxia.com>
  * @license   MIT <https://spdx.org/licenses/MIT.html>
- * @package   EthosDashboard\Filters
+ * @package   Ethos_Dashboard\Filters
  * @since     0.1.0
  */
 
