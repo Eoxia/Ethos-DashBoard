@@ -77,7 +77,6 @@ class Rig_Class extends \eoxia\Singleton_Util {
 
 		if ( ! empty( $full_url ) ) {
 			$full_path = str_replace( '\\', '/', str_replace( $uploads['baseurl'] , $uploads['basedir'], $full_url ) );
-			var_dump( $full_path );
 		} else {
 			$full_path = $upload_path . Core_Util::g()->random_str( 64 ) . '.txt';
 		}
