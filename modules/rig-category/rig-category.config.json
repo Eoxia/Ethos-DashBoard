@@ -3,9 +3,6 @@
   "slug": "rig-category",
   "version": "0.1.0",
   "path": "modules/rig-category",
-  "dependencies_func": [
-    "\\ethos_dashboard\\is_acf"
-  ],
   "dependencies": {
     "action": {},
     "class": {}

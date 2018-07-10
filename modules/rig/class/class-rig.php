@@ -71,17 +71,26 @@ class Rig_Class extends \eoxia\Singleton_Util {
 			}
 		}
 
-		$full_path = $upload_path . Core_Util::g()->random_str( 64 ) . '.txt';
+		$uploads = wp_upload_dir();
+
+		$full_url = get_post_meta( $id, 'lien_txt', true );
+
+		if ( ! empty( $full_url ) ) {
+			$full_path = str_replace( '\\', '/', str_replace( $uploads['baseurl'] , $uploads['basedir'], $full_url ) );
+			var_dump( $full_path );
+		} else {
+			$full_path = $upload_path . Core_Util::g()->random_str( 64 ) . '.txt';
+		}
 
 		if ( $file = fopen( $full_path, 'w+' ) ) {
 			fputs( $file, $output );
 			fclose( $file );
 
-			$uploads = wp_upload_dir();
 
 			$url = str_replace( str_replace( '\\', '/', $uploads['basedir'] ), $uploads['baseurl'], $full_path );
 
 			update_post_meta( $id, 'lien_txt', $url );
+			unset( $_POST['acf']['field_5b43741a3a5e5'] );
 		}
 	}
 

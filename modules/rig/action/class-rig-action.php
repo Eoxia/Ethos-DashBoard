@@ -25,7 +25,7 @@ class Rig_Action {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'callback_init' ) );
-		add_action( 'save_post', array( $this, 'callback_save_post' ), 10, 2 );
+		add_action( 'save_post', array( $this, 'callback_save_post' ), 20, 2 );
 	}
 
 	/**

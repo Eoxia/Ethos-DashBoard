@@ -3,9 +3,6 @@
   "slug": "wallet",
   "version": "0.1.0",
   "path": "modules/wallet",
-  "dependencies_func": [
-    "\\ethos_dashboard\\is_acf"
-  ],
   "dependencies": {
     "action": {},
     "class": {}
