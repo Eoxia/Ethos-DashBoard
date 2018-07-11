@@ -24,7 +24,8 @@ class Ethos_Dashboard_Filter {
 	 * @since 0.1.0
 	 */
 	public function __construct() {
-		add_filter( 'acf/settings/load_json', array( $this, 'annonces_annonce_json_load' ) );
+		add_filter( 'acf/settings/load_json', array( $this, 'callback_load_json' ) );
+		// add_filter( 'acf/settings/save_json', array( $this, 'callback_save_json' ) );
 	}
 
 	/**
@@ -36,9 +37,23 @@ class Ethos_Dashboard_Filter {
 	 *
 	 * @return Array $paths Acf folders
 	 */
-	public function annonces_annonce_json_load( $paths ) {
+	public function callback_load_json( $paths ) {
 		$paths[] = PLUGIN_ETHOS_DASHBOARD_PATH . 'core/asset/json';
 		return $paths;
+	}
+
+	/**
+	 * Hook when save JSON.
+	 *
+	 * @since  0.1.0
+	 *
+	 * @param  Array $paths Acf folders.
+	 *
+	 * @return Array $paths Acf folders
+	 */
+	public function callback_save_json( $path ) {
+		$path = PLUGIN_ETHOS_DASHBOARD_PATH . 'core/asset/json';
+		return $path;
 	}
 }
 

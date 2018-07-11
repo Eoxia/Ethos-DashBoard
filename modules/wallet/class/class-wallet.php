@@ -47,7 +47,6 @@ class Wallet_Class extends \eoxia\Singleton_Util {
 		$data = array();
 
 		$data['globalminer']         = get_field( 'globalminer', $post_id );
-		$data['name']                = get_field( 'name', $post_id );
 		$data['poolemail']           = get_field( 'poolemail', $post_id );
 		$data['proxywallet']         = get_field( 'proxywallet', $post_id );
 		$data['proxypool1']          = get_field( 'proxypool1', $post_id );

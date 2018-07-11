@@ -38,6 +38,7 @@ class Rig_Class extends \eoxia\Singleton_Util {
 		$data = array();
 
 		$data['maxgputemp']      = get_field( 'maxgputemp', $post_id );
+		$data['globalfan']       = get_field( 'globalfan', $post_id );
 		$data['globalcore']      = get_field( 'globalcore', $post_id );
 		$data['globalmem']       = get_field( 'globalmem', $post_id );
 		$data['globalpowertune'] = get_field( 'globalpowertune', $post_id );
