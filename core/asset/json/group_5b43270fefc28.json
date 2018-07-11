@@ -157,7 +157,9 @@
                 "disabled": "Disabled",
                 "enabled": "Enabled"
             },
-            "default_value": [],
+            "default_value": [
+                "enabled"
+            ],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -242,5 +244,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531294613
+    "modified": 1531297933
 }
