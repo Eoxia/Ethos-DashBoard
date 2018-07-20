@@ -83,7 +83,9 @@ class Rig_Class extends \eoxia\Singleton_Util {
 		}
 
 		if ( $file = fopen( $full_path, 'w+' ) ) {
-			fputs( $file, $output );
+			if ( fputs( $file, $output ) ) {
+				\eoxia\LOG_Util::log( 'Update file ' . $full_path . '<br />' . $output, 'ethos-dashboard' );
+			}
 			fclose( $file );
 
 

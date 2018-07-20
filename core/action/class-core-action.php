@@ -31,6 +31,8 @@ class Core_Action {
 		add_action( 'init', array( $this, 'load_languages' ) );
 		add_action( 'admin_init', array( $this, 'create_folder' ) );
 
+		add_action( 'admin_menu', array( $this, 'callback_admin_menu' ) );
+
 	}
 
 	/**
@@ -97,6 +99,10 @@ class Core_Action {
 				}
 			}
 		}
+	}
+
+	public function callback_admin_menu() {
+		add_menu_page( __( 'Ethos DashBoard', 'ethos_dashboard' ),  __( 'Ethos DashBoard', 'ethos_dashboard' ), 'manage_options', 'ethos-dashboard', '', 'dashicons-desktop' );
 	}
 }
 

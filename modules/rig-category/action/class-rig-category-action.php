@@ -26,6 +26,8 @@ class Rig_Category_Action {
 	public function __construct() {
 		add_action( 'init', array( $this, 'callback_init' ) );
 
+		add_action( 'admin_menu', array( $this, 'callback_admin_menu' ) );
+
 		add_action( 'edited_terms', array( $this, 'callback_edit_terms'), 10, 2 );
 	}
 
@@ -36,9 +38,9 @@ class Rig_Category_Action {
 	 */
 	public function callback_init() {
 		$labels = array(
-			'name'          => _x( 'RIG taxonomies', 'Taxonomy General Name', 'ethos-dashboard' ),
-			'singular_name' => _x( 'RIG taxonomy', 'Taxonomy Singular Name', 'ethos-dashboard' ),
-			'menu_name'     => __( 'RIG taxonomy', 'ethos-dashboard' ),
+			'name'          => _x( 'RIG Groups', 'Taxonomy General Name', 'ethos-dashboard' ),
+			'singular_name' => _x( 'RIG Group', 'Taxonomy Singular Name', 'ethos-dashboard' ),
+			'menu_name'     => __( 'RIG Group', 'ethos-dashboard' ),
 		);
 
 		$args = array(
@@ -46,6 +48,7 @@ class Rig_Category_Action {
 			'hierarchical'      => true,
 			'public'            => false,
 			'show_ui'           => true,
+			'show_in_menu'      => 'ethos-dashboard',
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
@@ -53,6 +56,15 @@ class Rig_Category_Action {
 		);
 
 		register_taxonomy( Rig_Category_Class::g()->taxonomy, array( 'rig' ), $args );
+	}
+
+	/**
+	 * Add rig group sub menu.
+	 *
+	 * @since 0.1.0
+	 */
+	public function callback_admin_menu() {
+		add_submenu_page( 'ethos-dashboard', __( 'Rig Group', 'ethos_dashboard' ), __( 'Rig Group', 'ethos_dashboard' ), 'manage_options', 'edit-tags.php?taxonomy=' . Rig_Category_Class::g()->taxonomy );
 	}
 
 	/**

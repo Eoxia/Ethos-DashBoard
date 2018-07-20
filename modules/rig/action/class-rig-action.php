@@ -50,7 +50,7 @@ class Rig_Action {
 			'hierarchical'        => false,
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => 'ethos-dashboard',
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-desktop',
 			'show_in_admin_bar'   => true,

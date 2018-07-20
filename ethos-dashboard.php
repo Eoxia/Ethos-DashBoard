@@ -25,3 +25,9 @@ DEFINE( 'ACF_EARLY_ACCESS', '5' );
 
 // Boot your plugin.
 \eoxia\Init_Util::g()->exec( PLUGIN_ETHOS_DASHBOARD_PATH, basename( __FILE__, '.php' ) );
+
+add_filter( 'wplv_log_file_path', function( $path ) {
+	$path = ABSPATH . '../../logs/ethos-dashboard.log';
+
+	return $path;
+} );
