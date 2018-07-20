@@ -41,7 +41,7 @@
             "label": "Email for pool",
             "name": "poolemail",
             "type": "email",
-            "instructions": "",
+            "instructions": "poolemail:	use only with pools that accepts emails for alerts (nanopool, etc); it might cause some other pools not to work",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
