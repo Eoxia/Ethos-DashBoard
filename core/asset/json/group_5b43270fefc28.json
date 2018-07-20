@@ -3,8 +3,62 @@
     "title": "RIG",
     "fields": [
         {
+            "key": "field_5b51ebaa8dc0a",
+            "label": "Required",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b4361399f5da",
+            "label": "Worker Name",
+            "name": "worker",
+            "type": "text",
+            "instructions": "http:\/\/ethosdistro.com\/kb\/#worker-name",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 6
+        },
+        {
+            "key": "field_5b43639d9f5db",
+            "label": "New Name",
+            "name": "newname",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 8
+        },
+        {
             "key": "field_5b44c76b2be67",
-            "label": "Rig Category",
+            "label": "Rig Group",
             "name": "rig_category",
             "type": "taxonomy",
             "instructions": "",
@@ -23,6 +77,42 @@
             "load_terms": 0,
             "return_format": "id",
             "multiple": 0
+        },
+        {
+            "key": "field_5b43741a3a5e5",
+            "label": ".txt file link",
+            "name": "lien_txt",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "disabled": 1
+        },
+        {
+            "key": "field_5b51ebde8dc0b",
+            "label": "Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5b432718a0683",
@@ -157,74 +247,13 @@
                 "disabled": "Disabled",
                 "enabled": "Enabled"
             },
-            "default_value": [
-                "enabled"
-            ],
-            "allow_null": 0,
+            "default_value": [],
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "ajax": 0,
             "return_format": "value",
             "placeholder": ""
-        },
-        {
-            "key": "field_5b4361399f5da",
-            "label": "Worker Name",
-            "name": "worker",
-            "type": "text",
-            "instructions": "http:\/\/ethosdistro.com\/kb\/#worker-name",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 6
-        },
-        {
-            "key": "field_5b43639d9f5db",
-            "label": "New Name",
-            "name": "newname",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 8
-        },
-        {
-            "key": "field_5b43741a3a5e5",
-            "label": "Lien TXT",
-            "name": "lien_txt",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 1,
-            "disabled": 1
         }
     ],
     "location": [
@@ -244,5 +273,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531297933
+    "modified": 1532095611
 }
