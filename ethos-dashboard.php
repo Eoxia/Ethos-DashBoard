@@ -21,7 +21,9 @@ DEFINE( 'PLUGIN_ETHOS_DASHBOARD_DIR', basename( __DIR__ ) );
 // Include EO_Framework.
 require_once 'core/external/eo-framework/eo-framework.php';
 
-DEFINE( 'ACF_EARLY_ACCESS', '5' );
+if ( ! defined( 'ACF_EARLY_ACCESS' ) ) {
+	DEFINE( 'ACF_EARLY_ACCESS', '5' );
+}
 
 // Boot your plugin.
 \eoxia\Init_Util::g()->exec( PLUGIN_ETHOS_DASHBOARD_PATH, basename( __FILE__, '.php' ) );
