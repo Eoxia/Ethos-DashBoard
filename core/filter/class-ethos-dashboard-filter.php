@@ -47,9 +47,9 @@ class Ethos_Dashboard_Filter {
 	 *
 	 * @since  0.1.0
 	 *
-	 * @param  Array $paths Acf folders.
+	 * @param  string $path Acf path.
 	 *
-	 * @return Array $paths Acf folders
+	 * @return string $path Acf path.
 	 */
 	public function callback_save_json( $path ) {
 		$path = PLUGIN_ETHOS_DASHBOARD_PATH . 'core/asset/json';
