@@ -209,7 +209,9 @@
             },
             "choices": {
                 "enabled": "enabled",
-                "disabled": "disabled"
+                "disabled": "disabled",
+                "nicehash": "nicehash",
+                "miner": "miner"
             },
             "default_value": [
                 "enabled"
@@ -258,5 +260,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1532095741
+    "modified": 1532100067
 }
