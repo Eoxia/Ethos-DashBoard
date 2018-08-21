@@ -5,6 +5,7 @@
   "path": "modules/rig-category",
   "dependencies": {
     "action": {},
-    "class": {}
+    "class": {},
+    "filter": {}
   }
 }
