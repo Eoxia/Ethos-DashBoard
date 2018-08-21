@@ -189,7 +189,7 @@ class Rig_Action {
 			$ids             .= $rigs[ $i ]->ID .',';
 
 
-			if ( ( $i + 1 ) / \eoxia\Config_Util::$init['ethos-dashboard']->rig->generate_mass_number === 1 || ( $i + 1 ) >= count( $rigs ) ) {
+			if ( ( $i + 1 ) % \eoxia\Config_Util::$init['ethos-dashboard']->rig->generate_mass_number === 0 || ( $i + 1 ) >= count( $rigs ) ) {
 				$fullname = substr( $fullname, 0, -2 );
 				$ids      = substr( $ids, 0, -1 );
 
