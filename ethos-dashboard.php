@@ -3,7 +3,7 @@
  * Plugin Name: ethos-dashboard
  * Plugin URI: http://www.eoxia.com
  * Description: Handle ethos config
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Eoxia <dev@eoxia.com>
  * Author URI: http://www.eoxia.com
  * License: AGPLv3

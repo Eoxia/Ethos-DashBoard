@@ -7,5 +7,6 @@
     "action": {},
     "class": {},
     "filter": {}
-  }
+  },
+  "generate_mass_number": 20
 }

@@ -28,7 +28,7 @@ class Rig_Category_Action {
 
 		add_action( 'admin_menu', array( $this, 'callback_admin_menu' ) );
 
-		add_action( 'edited_terms', array( $this, 'callback_edit_terms'), 10, 2 );
+		add_action( 'edited_terms', array( $this, 'callback_edit_terms' ), 10, 2 );
 	}
 
 	/**
@@ -50,9 +50,6 @@ class Rig_Category_Action {
 			'show_ui'           => true,
 			'show_in_menu'      => 'ethos-dashboard',
 			'show_admin_column' => true,
-			'show_in_nav_menus' => true,
-			'show_tagcloud'     => true,
-			'meta_box_cb'       => false,
 		);
 
 		register_taxonomy( Rig_Category_Class::g()->taxonomy, array( 'rig' ), $args );

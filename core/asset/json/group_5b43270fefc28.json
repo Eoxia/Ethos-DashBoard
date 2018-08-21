@@ -57,28 +57,6 @@
             "maxlength": 8
         },
         {
-            "key": "field_5b44c76b2be67",
-            "label": "Rig Group",
-            "name": "rig_category",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "rig_taxonomy",
-            "field_type": "radio",
-            "allow_null": 0,
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "multiple": 0
-        },
-        {
             "key": "field_5b43741a3a5e5",
             "label": ".txt file link",
             "name": "lien_txt",
@@ -273,5 +251,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1532095611
+    "modified": 1534768585
 }
