@@ -7,6 +7,6 @@
     "modules/rig-category/rig-category.config.json",
     "modules/wallet/wallet.config.json"
 	],
-	"version": "0.1.0",
+	"version": "0.2.0",
   "folder_meta_key": "_ethos_dashboard_folder"
 }
