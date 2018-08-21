@@ -12,7 +12,7 @@ window.eoxiaJS.ethosDashboard.RIG.init = function() {
 		jQuery( this ).closest( '.acf-input' ).find( 'input[type="text"]' ).attr( 'disabled', 'disabled' );
 	} );
 
-	if ( jQuery( "body.post-type-rig .wp-heading-inline" ).text() !== 'Edit Post' ) {
+	if ( jQuery( "body.post-type-rig .wp-heading-inline" ).text() === 'Rigs' ) {
 		jQuery( "body.post-type-rig .wrap .page-title-action").after('<a class="page-title-action wpeo-modal-event" data-action="load_modal_regenerate" data-class="modal-force-display modal-regenerate-txt" data-title="Regenerate TXT in process">Regenerate TXT</a>');
 	}
 

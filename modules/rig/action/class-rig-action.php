@@ -170,7 +170,7 @@ class Rig_Action {
 		$fullname       = '';
 		$ids            = '';
 
-		while ( $i < \eoxia\Config_Util::$init['ethos-dashboard']->rig->generate_mass_number ) {
+		while ( $i < count( $rigs ) ) {
 			if ( empty( $rigs[ $i ] ) ) {
 				$fullname = substr( $fullname, 0, -2 );
 				$ids      = substr( $ids, 0, -1 );
@@ -189,7 +189,7 @@ class Rig_Action {
 			$ids             .= $rigs[ $i ]->ID .',';
 
 
-			if ( $i / \eoxia\Config_Util::$init['ethos-dashboard']->rig->generate_mass_number === 1 || $i >= count( $rigs ) ) {
+			if ( ( $i + 1 ) / \eoxia\Config_Util::$init['ethos-dashboard']->rig->generate_mass_number === 1 || ( $i + 1 ) >= count( $rigs ) ) {
 				$fullname = substr( $fullname, 0, -2 );
 				$ids      = substr( $ids, 0, -1 );
 
@@ -200,6 +200,8 @@ class Rig_Action {
 				);
 
 				$tmp_rigs_array = array();
+				$fullname       = '';
+				$ids            = '';
 			}
 
 			if ( $i >= count( $rigs ) ) {

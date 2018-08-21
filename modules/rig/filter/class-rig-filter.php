@@ -78,11 +78,8 @@ class Rig_Filter {
 
 				if ( file_exists( $path_txt ) ) {
 					$timestamp = filemtime( $path_txt );
-					$date      = date( 'Y/m/d', $timestamp );
-					$full_date = date( 'Y/m/d g:m:s a', $timestamp );
-					$output    = __( 'Last Modified' );
-					$output   .= '<br /><abbr title="' . $full_date . '">' . $date . '</abbr>';
-					echo $output;
+					$date      = date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $timestamp );
+					echo $date;
 				} else {
 					_e( 'File not generated yet', 'ethos-dashboard' );
 				}
@@ -90,10 +87,8 @@ class Rig_Filter {
 			case 'preview_txt':
 				$txt_url        = get_post_meta( $post_id, 'lien_txt', true );
 				$displayed_data = get_post_meta( $post_id, 'column_data', true );
-				$full_data      = get_post_meta( $post_id, 'title_column_data', true );
+				$txt_path       = get_post_meta( $post_id, 'path_txt', true );
 				$errors         = get_post_meta( $post_id, 'errors', true );
-				$output_title   = '';
-
 
 				if ( ! empty( $errors ) ) {
 					echo '<pre>';
@@ -105,21 +100,10 @@ class Rig_Filter {
 					echo '</pre>';
 				} else {
 
+					$content = file_get_contents( $txt_path );
+
 					if ( ! empty( $displayed_data ) ) {
-
-						if ( ! empty( $full_data ) ) {
-							foreach ( $full_data as $key => $value ) {
-								if ( ! empty( $value ) ) {
-									if ( ! in_array( $key, Rig_Class::g()->displayed_column_data, true ) ) {
-										$output_title .= $key . ' ';
-									}
-
-									$output_title .= $value . PHP_EOL;
-								}
-							}
-						}
-
-						$output = '<abbr title="' . $output_title . '">' . join( $displayed_data, PHP_EOL ) . '</abbr>';
+						$output = '<abbr title="' . $content . '">' . join( $displayed_data, PHP_EOL ) . '</abbr>';
 						echo '<pre>';
 						echo $output;
 						echo '</pre>';
@@ -133,7 +117,7 @@ class Rig_Filter {
 				$errors  = get_post_meta( $post_id, 'errors', true );
 
 				if ( empty( $errors ) ) {
-					printf( __( '<a href="%s">%s</a>', 'ethos-dashboard' ), $txt_url, substr( $txt_url, 0, 20 ) . '...' . substr( $txt_url, strlen( $txt_url ) - 20, strlen( $txt_url ) - 5 ) );
+					printf( __( '<a target="_blank" href="%s">%s</a>', 'ethos-dashboard' ), $txt_url, '...' . substr( $txt_url, strlen( $txt_url ) - 10 ) );
 				} else {
 					_e( 'Unable to retrieve txt link', 'ethos-dashboard' );
 				}
