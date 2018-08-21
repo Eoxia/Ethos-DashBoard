@@ -24,3 +24,6 @@ svg.fa-copy:hover {
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   cursor: pointer; }
+
+body.post-type-rig td.preview_txt pre {
+  margin: 0; }

@@ -194,7 +194,11 @@ class Rig_Class extends \eoxia\Singleton_Util {
 		$poolemail_end   = substr( $founded_data['poolemail'], strlen( $founded_data['poolemail'] ) - 5, 5 );
 
 		$founded_data['poolemail']  = 'poolemail ' . $poolemail_begin . '...@...' . $poolemail_end;
-		$founded_data['proxypool1'] = 'proxypool1 ' . $founded_data['proxypool1'];
+		if ( strlen( $founded_data['proxypool1'] ) > 15 ) {
+			$founded_data['proxypool1'] = 'proxypool1 ...' . substr( $founded_data['proxypool1'], strlen( $founded_data['proxypool1'] ) - 10, 10 );
+		} else {
+			$founded_data['proxypool1'] = 'proxypool1 ' . $founded_data['proxypool1'];
+		}
 
 		return $founded_data;
 	}
