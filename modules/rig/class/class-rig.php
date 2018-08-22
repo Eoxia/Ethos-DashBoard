@@ -189,11 +189,12 @@ class Rig_Class extends \eoxia\Singleton_Util {
 
 		$founded_data['proxywallet'] = 'wallet .....' . substr( $founded_data['proxywallet'], strlen( $founded_data['proxywallet'] ) - 3, 3 );
 
-		// Process poolemail: Récupères les deux premières lettres et le deux dernières lettres.
+		// Process poolemail: Récupères les deux premières lettres et les cinq dernières lettres.
 		$poolemail_begin = substr( $founded_data['poolemail'], 0, 2 );
 		$poolemail_end   = substr( $founded_data['poolemail'], strlen( $founded_data['poolemail'] ) - 5, 5 );
 
 		$founded_data['poolemail']  = 'poolemail ' . $poolemail_begin . '...@...' . $poolemail_end;
+
 		if ( strlen( $founded_data['proxypool1'] ) > 15 ) {
 			$founded_data['proxypool1'] = 'proxypool1 ...' . substr( $founded_data['proxypool1'], strlen( $founded_data['proxypool1'] ) - 10, 10 );
 		} else {

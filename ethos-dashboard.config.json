@@ -5,7 +5,8 @@
 		"core/core.config.json",
     "modules/rig/rig.config.json",
     "modules/rig-category/rig-category.config.json",
-    "modules/wallet/wallet.config.json"
+    "modules/wallet/wallet.config.json",
+    "modules/setting/setting.config.json"
 	],
 	"version": "0.2.0",
   "folder_meta_key": "_ethos_dashboard_folder"
