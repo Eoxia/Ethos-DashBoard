@@ -1,0 +1,10 @@
+{
+  "name": "Setting",
+  "slug": "setting",
+  "version": "0.2.0",
+  "path": "modules/setting",
+  "dependencies": {
+    "action": {}
+  },
+  "state": false
+}

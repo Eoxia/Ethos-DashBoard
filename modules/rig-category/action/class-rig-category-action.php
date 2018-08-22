@@ -84,14 +84,19 @@ class Rig_Category_Action {
 			if ( ! empty( $rigs ) ) {
 				foreach ( $rigs as $rig ) {
 					$rig_id        = $rig->ID;
-					$category      = get_term( $term_id, Rig_Category_Class::g()->taxonomy );
-					$category->acf = Rig_Category_Class::g()->get_fields( $category->term_id );
-					$wallet        = Wallet_Class::g()->get_fields( $category->acf['wallet_id'] );
-					$rig           = Rig_Class::g()->get_fields( $rig->ID );
 
-					unset( $category->acf['wallet_id'] );
+					$categories = wp_get_post_terms( $rig->ID, Rig_Category_Class::g()->taxonomy );
 
-					Rig_Class::g()->generate( $rig_id, $rig, $wallet, $category->acf );
+					if ( ! empty( $categories[0] ) && $categories[0]->term_id === $term_id ) {
+						$category      = get_term( $term_id, Rig_Category_Class::g()->taxonomy );
+						$category->acf = Rig_Category_Class::g()->get_fields( $category->term_id );
+						$wallet        = Wallet_Class::g()->get_fields( $category->acf['wallet_id'] );
+						$rig           = Rig_Class::g()->get_fields( $rig->ID );
+
+						unset( $category->acf['wallet_id'] );
+
+						Rig_Class::g()->generate( $rig_id, $rig, $wallet, $category->acf );
+					}
 				}
 			}
 		}
