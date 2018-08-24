@@ -99,14 +99,17 @@ class Rig_Filter {
 					echo esc_html( join( $errors, PHP_EOL ) );
 					echo '</pre>';
 				} else {
+					if ( ! empty( $txt_path ) && file_exists( $txt_path ) ) {
+						$content = file_get_contents( $txt_path );
 
-					$content = file_get_contents( $txt_path );
-
-					if ( ! empty( $displayed_data ) ) {
-						$output = '<abbr title="' . $content . '">' . join( $displayed_data, PHP_EOL ) . '</abbr>';
-						echo '<pre>';
-						echo $output;
-						echo '</pre>';
+						if ( ! empty( $displayed_data ) ) {
+							$output = '<abbr title="' . $content . '">' . join( $displayed_data, PHP_EOL ) . '</abbr>';
+							echo '<pre>';
+							echo $output;
+							echo '</pre>';
+						} else {
+							_e( 'Preview not available.', 'ethos-dashboard' );
+						}
 					} else {
 						_e( 'Preview not available.', 'ethos-dashboard' );
 					}

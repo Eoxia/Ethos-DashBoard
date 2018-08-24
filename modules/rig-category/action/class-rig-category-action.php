@@ -95,7 +95,9 @@ class Rig_Category_Action {
 
 						unset( $category->acf['wallet_id'] );
 
-						Rig_Class::g()->generate( $rig_id, $rig, $wallet, $category->acf );
+						if ( Rig_Class::g()->create_file( $rig_id ) ) {
+							Rig_Class::g()->generate( $rig_id, $rig, $wallet, $category->acf );
+						}
 					}
 				}
 			}

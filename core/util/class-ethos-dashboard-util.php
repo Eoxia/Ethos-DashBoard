@@ -116,7 +116,7 @@ class Core_Util extends \eoxia\Singleton_Util {
 	 *
 	 * @return string Le chemin absolue.
 	 */
-	public function get_upload_path() {
+	public function get_upload_ethos_path() {
 		$ethos_dashboard_folder = get_option( \eoxia\Config_Util::$init['ethos-dashboard']->folder_meta_key, '' );
 
 		$uploads   = wp_upload_dir();
