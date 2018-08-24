@@ -92,7 +92,9 @@ class Rig_Action {
 
 				unset( $category->acf['wallet_id'] );
 
-				Rig_Class::g()->generate( $post_id, $rig, $wallet, $category->acf );
+				if ( Rig_Class::g()->create_file( $post_id ) ) {
+					Rig_Class::g()->generate( $post_id, $rig, $wallet, $category->acf );
+				}
 			}
 		}
 	}
@@ -257,16 +259,20 @@ class Rig_Action {
 
 					unset( $category->acf['wallet_id'] );
 
-					$state = Rig_Class::g()->generate( $id, $rig, $wallet, $category->acf );
-					if ( true === $state ) {
-						$number_success++;
-					} else {
-						$number_error++;
-						$rig  = get_post( $id );
-						$link = '<a target="_blank" href="' . get_edit_post_link( $id ) . '">' . __( 'Fix it', 'ethos-dashboard' ) . '</a>';
+					if ( Rig_Class::g()->create_file( $post_id ) ) {
+						$state = Rig_Class::g()->generate( $id, $rig, $wallet, $category->acf );
 
-						$error_message[ $id ] = sprintf( __( 'Unable to generate the txt file of the rig: %s, %s<br />Errors: <br /> %s', 'ethos-dashboard' ), $rig->post_title, $link, join( $state, '<br />' ) );
+						if ( true === $state ) {
+							$number_success++;
+						} else {
+							$number_error++;
+							$rig  = get_post( $id );
+							$link = '<a target="_blank" href="' . get_edit_post_link( $id ) . '">' . __( 'Fix it', 'ethos-dashboard' ) . '</a>';
+
+							$error_message[ $id ] = sprintf( __( 'Unable to generate the txt file of the rig: %s, %s<br />Errors: <br /> %s', 'ethos-dashboard' ), $rig->post_title, $link, join( $state, '<br />' ) );
+						}
 					}
+
 				} else {
 					$number_error++;
 					$rig  = get_post( $id );

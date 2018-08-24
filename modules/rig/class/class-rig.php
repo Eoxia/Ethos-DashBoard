@@ -73,11 +73,58 @@ class Rig_Class extends \eoxia\Singleton_Util {
 	}
 
 	/**
-	 * Génère le fichier txt.
+	 * [create_file description]
 	 *
-	 * @param array $data .
+	 * @since 0.2.0
 	 *
-	 * @since 0.1.0
+	 * @param  integer $id L'ID du RIG.
+	 */
+	public function create_file( $id ) {
+		$md5_urls = get_option( 'md5_urls', array() );
+		$path_txt = get_post_meta( $id, 'path_txt', true );
+
+		if ( empty( $md5_urls[ $id ] ) && empty( $path_txt ) ) {
+			$uploads     = wp_upload_dir();
+			$upload_path = Core_Util::g()->get_upload_ethos_path();
+
+			$path_txt = $upload_path . Core_Util::g()->random_str( 64 ) . '.txt';
+
+			try {
+				if ( fopen( $path_txt, 'w+' ) ) {
+					$url             = str_replace( str_replace( '\\', '/', $uploads['basedir'] ), $uploads['baseurl'], $path_txt );
+					$md5_url         = md5( $url );
+					$md5_urls[ $id ] = $md5_url;
+
+					update_option( 'md5_urls', $md5_urls );
+					update_post_meta( $id, 'lien_txt', $url );
+					update_post_meta( $id, 'path_txt', $path_txt );
+
+					$rig_title = get_the_title( $id );
+
+					\eoxia\LOG_Util::log( sprintf( __( 'RIG #%s: create file: %s.', 'ethos-dashboard' ), $rig_title, $path_txt ), 'ethos-dashboard' );
+
+					return true;
+				} else {
+					\eoxia\LOG_Util::log( __( 'RIG #%s: create file: %s.', 'ethos-dashboard'  ), 'ethos-dashboard', \eoxia\Config_Util::$init['ethos-dashboard']->error_categories->FILE_ERROR );
+					return false;
+				}
+			} catch ( Exception $e ) {
+				\eoxia\LOG_Util::log( sprintf( __( 'Cannot open file: %s.', 'ethos-dashboard' ), $path_txt ), 'ethos-dashboard', \eoxia\Config_Util::$init['ethos-dashboard']->error_categories->FILE_ERROR );
+				return false;
+			}
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * Génères le fichier TXT
+	 *
+	 * @param  [type] $id            [description]
+	 * @param  [type] $rig_data      [description]
+	 * @param  [type] $wallet_data   [description]
+	 * @param  [type] $category_data [description]
+	 * @return [type]                [description]
 	 */
 	public function generate( $id, $rig_data, $wallet_data, $category_data ) {
 		$data = array_merge( $wallet_data, $category_data, $rig_data );
@@ -92,8 +139,6 @@ class Rig_Class extends \eoxia\Singleton_Util {
 		}
 
 		if ( 0 === count( $errors ) ) {
-			$upload_path = Core_Util::g()->get_upload_path();
-
 			$output = '';
 			if ( ! empty( $data ) ) {
 				foreach ( $data as $key => $value ) {
@@ -103,39 +148,33 @@ class Rig_Class extends \eoxia\Singleton_Util {
 				}
 			}
 
-			$uploads = wp_upload_dir();
+			$full_path = get_post_meta( $id, 'path_txt', true );
 
-			$full_url = get_post_meta( $id, 'lien_txt', true );
-			$full_url = get_post_meta( $id, 'path_txt', true );
+			if ( file_exists( $full_path ) ) {
+				if ( $file = fopen( $full_path, 'w' ) ) {
+					if ( fputs( $file, $output ) ) {
+						\eoxia\LOG_Util::log( 'Update file ' . $full_path . '<br />' . $output, 'ethos-dashboard' );
+					}
+					fclose( $file );
 
-			if ( ! empty( $full_url ) ) {
-				$full_path = str_replace( '\\', '/', str_replace( $uploads['baseurl'], $uploads['basedir'], $full_url ) );
-			} else {
-				$full_path = $upload_path . Core_Util::g()->random_str( 64 ) . '.txt';
-			}
+					$column_data       = $this->process_column_data( $data );
+					$title_column_data = array_merge( $data, $column_data );
 
-			if ( $file = fopen( $full_path, 'w+' ) ) {
-				if ( fputs( $file, $output ) ) {
-					\eoxia\LOG_Util::log( 'Update file ' . $full_path . '<br />' . $output, 'ethos-dashboard' );
+					update_post_meta( $id, 'column_data', $column_data );
+					update_post_meta( $id, 'title_column_data', $title_column_data );
+					delete_post_meta( $id, 'errors' );
+					return true;
 				}
-				fclose( $file );
-
-				$url = str_replace( str_replace( '\\', '/', $uploads['basedir'] ), $uploads['baseurl'], $full_path );
-
-				$column_data       = $this->process_column_data( $data );
-				$title_column_data = array_merge( $data, $column_data );
-
-				update_post_meta( $id, 'column_data', $column_data );
-				update_post_meta( $id, 'title_column_data', $title_column_data );
-				update_post_meta( $id, 'lien_txt', $url );
-				update_post_meta( $id, 'path_txt', $full_path );
-				delete_post_meta( $id, 'errors' );
-				return true;
+			} else {
+				$errors[] = sprintf( __( 'File: %s not exists', 'ethos-dashboard'), $full_path );
+				update_post_meta( $id, 'errors', $errors );
+				return $errors;
 			}
 		} else {
 			update_post_meta( $id, 'errors', $errors );
 			return $errors;
 		}
+
 	}
 
 	/**
